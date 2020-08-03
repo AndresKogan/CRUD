@@ -13,32 +13,9 @@ import java.awt.event.ActionListener;
  *
  * @author Usuario
  */
-public class ModeloMenu implements ActionListener {
+public class ModeloMenu   {
 
-    Vista.VistaMenu vista;
-    Modelo.ModeloMenu modelo;
-
-    public ModeloMenu(VistaMenu vista, ModeloMenu modelo) {
-        this.vista = vista;
-        this.modelo = modelo;
-        vista.setVisible(true);
-        vista.setTitle("Menu");
-        vista.setLocation(null);
-        botones();
-    }
-
-    public void botones() {
-
-        vista.botonAlumno.addActionListener(this);
-        vista.botonMateria.addActionListener(this);
-        vista.botonNotas.addActionListener(this);
-        vista.botonProfesor.addActionListener(this);
-
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-      }
+  
 }
     
 

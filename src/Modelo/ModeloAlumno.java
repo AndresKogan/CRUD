@@ -5,8 +5,13 @@
  */
 package Modelo;
 
+
 import Datos.AlumnoDAO;
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.Set;
+import javax.swing.JTable;
+
 
 /**
  *
@@ -20,6 +25,7 @@ public class ModeloAlumno {
     private Date fechaNac;
     private String domicilio;
     private String telefono;
+    private long codInsc;
     private AlumnoDAO dato = new AlumnoDAO();
 
     public long getDni() {
@@ -77,7 +83,57 @@ public class ModeloAlumno {
     public void setDato(AlumnoDAO dato) {
         this.dato = dato;
     }
+
+    public long getCodInsc() {
+        return codInsc;
+    }
+
+    public void setCodInsc(long codInsc) {
+        this.codInsc = codInsc;
+    }
     
+    public Set<String> CodInsc(){
+        return dato.traeCodInsc();
+    }
+    
+    public ArrayList<ModeloAlumno>traeAlumnos(){
+        return dato.traerDatosDAO();
+    }
+    
+    public boolean cargaDatos (ModeloAlumno modeloAlumno){
+        
+        return dato.cargaDatosDAO(modeloAlumno);
+    }
+    public boolean baja(JTable tablaAlumnos){
+    return dato.bajaDAO(tablaAlumnos);
+        
+    }
+    public boolean validaCarga (String a){
+    if (a.length()==0){
+        return true;
+    }
+    else {return false;
+    
+    }}
+    
+    public boolean validaDNI (String datos){
+        try {dni = Long.parseLong(datos);
+        return false;
+        }
+        catch (NumberFormatException nfe){
+                return true;
+    }
+    }
+    public boolean dniRepetido(ModeloAlumno alumno){
+    return dato.dniRepetidoDAO(alumno);
+      
+    
+    }
+    
+    public boolean modifica(ModeloAlumno alumno){
+        return dato.modificaDAO(alumno);
+    }
+       
     
     
     

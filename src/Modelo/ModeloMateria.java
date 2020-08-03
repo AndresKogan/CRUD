@@ -5,46 +5,90 @@
  */
 package Modelo;
 
-import Vista.VistaMateria;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import Datos.MateriaDAO;
+import java.util.ArrayList;
+import java.util.Set;
+import javax.swing.JTable;
 
 /**
  *
  * @author Usuario
  */
-public class ModeloMateria implements ActionListener {
+public class ModeloMateria  {
+    
+    private int codigoMateria;
+    private String nombreMateria;
+    private Long profMateriaDNI;
+    private MateriaDAO dato = new MateriaDAO();
 
-    Vista.VistaMateria vista;
-    Modelo.ModeloMateria modelo;
-
-    public ModeloMateria(VistaMateria vista, ModeloMateria modelo) {
-        this.vista = vista;
-        this.modelo = modelo;
-        vista.setVisible(true);
-        vista.setTitle("Materia");
-        vista.setLocation(null);
-
-        botones();
+    public int getCodigoMateria() {
+        return codigoMateria;
     }
 
+    public void setCodigoMateria(int codigoMateria) {
+        this.codigoMateria = codigoMateria;
+    }
+
+    public String getNombreMateria() {
+        return nombreMateria;
+    }
+
+    public void setNombreMateria(String nombreMateria) {
+        this.nombreMateria = nombreMateria;
+    }
+
+    public Long getProfMateriaDNI() {
+        return profMateriaDNI;
+    }
+
+    public void setProfMateriaDNI(Long profMateriaDNI) {
+        this.profMateriaDNI = profMateriaDNI;
+    }
+
+    public MateriaDAO getDato() {
+        return dato;
+    }
+
+    public void setDato(MateriaDAO dato) {
+        this.dato = dato;
+    }
     
-    public void botones(){
+   public boolean validaCarga(String a){
+    
+        if (a.length()==0){
+            return true;
+        }
+        else{return false;}
+    
+    
+    }
+    
+    public boolean nombreRepetido (ModeloMateria materia){
+        return dato.nombreRepetidoDAO(materia);
         
-    
-    vista.DniProfesor.addActionListener(this);
-    vista.TextoCargaHoraria.addActionListener(this);
-    vista.TextoCodigo.addActionListener(this);
-    vista.TextoNombre.addActionListener(this);
-    vista.TextoNombreProfesor.addActionListener(this);
-   vista.botonEliminar.addActionListener(this);
-    vista.botonModificar.addActionListener(this);
-    vista.botonNuevo.addActionListener(this);
-   vista.botonVolver.addActionListener(this);;
     }
+    
+    public ArrayList <ModeloMateria> traeMaterias(){
+        return dato.traerDatosDAO();
+    }
+    
+    public boolean cargaDatos (ModeloMateria modeloMateria){
+    
+        return dato.cargaDatosDAO(modeloMateria);
+    }
+    public boolean baja (JTable tablaMateria){
+    return dato.bajaDAO(tablaMateria);
+    }
+    
+    public boolean modifica(ModeloMateria materia){
+    return dato.modificaDAO(materia);}
+    
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-      }
-}
+
+ public Set<String> traeDNIProfesor(){
+   
+        return dato.traeDNIProfesorDAO();
+    
+    }}
+
     

@@ -16,7 +16,7 @@ public class SQLQuery {
     
     public void conectar(String servidor, String bd, String usuario, String password) throws ClassNotFoundException, SQLException{
         Class.forName("com.mysql.jdbc.Driver");
-        this.conn = DriverManager.getConnection("jdbc:mysql://"+servidor+"/"+bd,usuario,password);
+        this.conn = DriverManager.getConnection("jdbc:mysql://"+servidor+"/"+bd+"?user=" + usuario+ "&password=" + password + "&useSSL=false");
     }
     
     public void desconectar() throws SQLException{

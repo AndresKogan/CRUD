@@ -5,6 +5,12 @@
  */
 package Vista;
 
+import com.toedter.calendar.JDateChooser;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Usuario
@@ -17,6 +23,104 @@ public class VistaAlumno extends javax.swing.JFrame {
     public VistaAlumno() {
         initComponents();
     }
+
+    public JComboBox<String> getCodInsc() {
+        return codInsc;
+    }
+
+    public void setCodInsc(JComboBox<String> codInsc) {
+        this.codInsc = codInsc;
+    }
+
+    public JTextField getTextoApellido() {
+        return TextoApellido;
+    }
+
+    public void setTextoApellido(JTextField TextoApellido) {
+        this.TextoApellido = TextoApellido;
+    }
+
+    public JTextField getTextoDNI() {
+        return TextoDNI;
+    }
+
+    public void setTextoDNI(JTextField TextoDNI) {
+        this.TextoDNI = TextoDNI;
+    }
+
+    public JTextField getTextoDomicilio1() {
+        return TextoDomicilio1;
+    }
+
+    public void setTextoDomicilio1(JTextField TextoDomicilio1) {
+        this.TextoDomicilio1 = TextoDomicilio1;
+    }
+
+    public JTextField getTextoNombre() {
+        return TextoNombre;
+    }
+
+    public void setTextoNombre(JTextField TextoNombre) {
+        this.TextoNombre = TextoNombre;
+    }
+
+    public JTextField getTextoTelefono() {
+        return TextoTelefono;
+    }
+
+    public void setTextoTelefono(JTextField TextoTelefono) {
+        this.TextoTelefono = TextoTelefono;
+    }
+
+    public JButton getBotonEliminar() {
+        return botonEliminar;
+    }
+
+    public void setBotonEliminar(JButton botonEliminar) {
+        this.botonEliminar = botonEliminar;
+    }
+
+    public JButton getBotonModificar() {
+        return botonModificar;
+    }
+
+    public void setBotonModificar(JButton botonModificar) {
+        this.botonModificar = botonModificar;
+    }
+
+    public JButton getBotonNuevo() {
+        return botonNuevo;
+    }
+
+    public void setBotonNuevo(JButton botonNuevo) {
+        this.botonNuevo = botonNuevo;
+    }
+
+    public JButton getBotonVolver() {
+        return botonVolver;
+    }
+
+    public void setBotonVolver(JButton botonVolver) {
+        this.botonVolver = botonVolver;
+    }
+
+    public JDateChooser getFechaNac() {
+        return fechaNac;
+    }
+
+    public void setFechaNac(JDateChooser fechaNac) {
+        this.fechaNac = fechaNac;
+    }
+
+    public JTable getTablaAlumnos() {
+        return tablaAlumnos;
+    }
+
+    public void setTablaAlumnos(JTable tablaAlumnos) {
+        this.tablaAlumnos = tablaAlumnos;
+    }
+    
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -32,7 +136,6 @@ public class VistaAlumno extends javax.swing.JFrame {
         TextoApellido = new javax.swing.JTextField();
         TextoDNI = new javax.swing.JTextField();
         TextoTelefono = new javax.swing.JTextField();
-        electorFecha = new com.toedter.calendar.JDateChooser();
         botonNuevo = new javax.swing.JButton();
         botonEliminar = new javax.swing.JButton();
         botonModificar = new javax.swing.JButton();
@@ -41,11 +144,14 @@ public class VistaAlumno extends javax.swing.JFrame {
         tablaAlumnos = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
         TextoDomicilio1 = new javax.swing.JTextField();
+        fechaNac = new com.toedter.calendar.JDateChooser();
+        jLabel8 = new javax.swing.JLabel();
+        codInsc = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 204, 204));
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Alumno", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Verdana", 1, 12))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
@@ -62,14 +168,6 @@ public class VistaAlumno extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel6.setText("Fecha de Nac.");
-
-        TextoNombre.setText("jTextField1");
-
-        TextoApellido.setText("jTextField1");
-
-        TextoDNI.setText("jTextField1");
-
-        TextoTelefono.setText("jTextField1");
 
         botonNuevo.setText("Nuevo");
 
@@ -95,7 +193,8 @@ public class VistaAlumno extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel7.setText("Dni");
 
-        TextoDomicilio1.setText("jTextField1");
+        jLabel8.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel8.setText("Cod de Inscripción");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -104,10 +203,6 @@ public class VistaAlumno extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(botonModificar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(botonEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(botonNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(botonVolver)
                         .addGroup(jPanel1Layout.createSequentialGroup()
@@ -123,16 +218,22 @@ public class VistaAlumno extends javax.swing.JFrame {
                                         .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(TextoNombre)
+                                .addComponent(TextoNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
                                 .addComponent(TextoApellido)
                                 .addComponent(TextoDNI)
-                                .addComponent(electorFecha, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
                                 .addComponent(TextoDomicilio1)
-                                .addComponent(TextoTelefono, javax.swing.GroupLayout.Alignment.TRAILING))))
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(TextoTelefono, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(fechaNac, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(codInsc, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(jLabel5)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(botonModificar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+                        .addComponent(botonEliminar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botonNuevo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,27 +244,31 @@ public class VistaAlumno extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
                             .addComponent(TextoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(21, 21, 21)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(TextoApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3))
-                        .addGap(21, 21, 21)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(TextoDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7))
-                        .addGap(21, 21, 21)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TextoDomicilio1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))
-                        .addGap(21, 21, 21)
+                            .addComponent(jLabel4)
+                            .addComponent(TextoDomicilio1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(TextoTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(21, 21, 21)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
-                            .addComponent(electorFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(32, 32, 32)
+                            .addComponent(fechaNac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(codInsc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8))
+                        .addGap(52, 52, 52)
                         .addComponent(botonNuevo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(botonEliminar)
@@ -181,17 +286,11 @@ public class VistaAlumno extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 2, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -201,6 +300,7 @@ public class VistaAlumno extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -225,28 +325,38 @@ public class VistaAlumno extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-       
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new VistaAlumno().setVisible(true);
+            }
+        });
     }
+      
+    
+       
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JTextField TextoApellido;
-    public javax.swing.JTextField TextoDNI;
-    public javax.swing.JTextField TextoDomicilio1;
-    public javax.swing.JTextField TextoNombre;
-    public javax.swing.JTextField TextoTelefono;
-    public javax.swing.JButton botonEliminar;
-    public javax.swing.JButton botonModificar;
-    public javax.swing.JButton botonNuevo;
-    public javax.swing.JButton botonVolver;
-    public com.toedter.calendar.JDateChooser electorFecha;
+    private javax.swing.JTextField TextoApellido;
+    private javax.swing.JTextField TextoDNI;
+    private javax.swing.JTextField TextoDomicilio1;
+    private javax.swing.JTextField TextoNombre;
+    private javax.swing.JTextField TextoTelefono;
+    private javax.swing.JButton botonEliminar;
+    private javax.swing.JButton botonModificar;
+    private javax.swing.JButton botonNuevo;
+    private javax.swing.JButton botonVolver;
+    private javax.swing.JComboBox<String> codInsc;
+    private com.toedter.calendar.JDateChooser fechaNac;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JTable tablaAlumnos;
+    private javax.swing.JTable tablaAlumnos;
     // End of variables declaration//GEN-END:variables
 }
